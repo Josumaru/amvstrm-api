@@ -1,8 +1,15 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "vercel-build.sh",
-      "use": "@vercel/static-build"
+      "src": "src/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/index.ts"
     }
   ]
 }
